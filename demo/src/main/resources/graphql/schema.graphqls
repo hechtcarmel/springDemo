@@ -2,7 +2,12 @@
 type Query {
 	bankAccount(id: ID): BankAccount
 	bankAccountPhilip: BankAccount
-	airplanes: [Airplane]
+	
+	#Active airplane entities
+	airplanes: [Airplane] 
+
+    #Find airplane by id
+    findAirplane(id: Int): Airplane
 }
 
 type BankAccount {

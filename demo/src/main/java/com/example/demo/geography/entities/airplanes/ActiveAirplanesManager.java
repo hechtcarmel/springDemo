@@ -22,7 +22,7 @@ public class ActiveAirplanesManager {
 	
 	static {
 		activeAirplanes = new ArrayList<>();
-		int AIRPLANES_NUM = 10000;
+		int AIRPLANES_NUM = 1000;
 		for (int i = 0; i < AIRPLANES_NUM; i++) {
 
 			int id = i;

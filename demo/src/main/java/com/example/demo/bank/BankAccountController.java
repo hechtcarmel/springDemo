@@ -14,13 +14,13 @@ public class BankAccountController {
   public BankAccount bankAccount(UUID id){
     System.out.println("BBBBBBBBBBBBBBBBB");
     return BankAccount.builder().id(id).name("George").build();
-}
+  }
 
   @QueryMapping
   public BankAccount bankAccountPhilip(){
     System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     return BankAccount.builder().id(UUID.fromString("9e4e6eda-e290-483c-bf79-799585019698")).name("Philip").build();
-}
+  }
 	
 }
 

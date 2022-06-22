@@ -8,18 +8,14 @@ public class Airplane {
 	private int id;
 	private String name;
 	private double longitude;
-	// private double latitude;
-	// private double altitude;
-	// private double rotation;
+	private String description;
     private Coordinates coordinates;
+    
 
 	public Airplane(int id, String name, double lon, double lat, double alt){
 		this.id = id;
 		this.name = name;
-		// this.longitude = lon;
-		// this.latitude = lat;
-		// this.altitude = alt;
-		
+		this.description = "I am airplane number " + id;
         this.coordinates = new Coordinates(lon, lat, alt, 0);
 	}
 
