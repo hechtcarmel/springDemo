@@ -19,6 +19,8 @@ type Airplane {
 	id: Int!
     description: String
     
+    #The geographic location of the airplane
+    coordinates: Coordinates
 
 }
 
