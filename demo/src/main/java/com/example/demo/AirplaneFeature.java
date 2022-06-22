@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import net.minidev.json.JSONObject;
 
 public class AirplaneFeature {
 
@@ -83,17 +82,17 @@ public class AirplaneFeature {
 	}
 
 	//generate jsonObject
-	public JSONObject toJSONObject(){
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("id", id);
-		jsonObject.put("name", name);
-		jsonObject.put("lon", longitude);
-		jsonObject.put("lat", latitude);
-		jsonObject.put("alt", altitude);
-		jsonObject.put("rotation", rotation);
+	// public JSONObject toJSONObject(){
+	// 	JSONObject jsonObject = new JSONObject();
+	// 	jsonObject.put("id", id);
+	// 	jsonObject.put("name", name);
+	// 	jsonObject.put("lon", longitude);
+	// 	jsonObject.put("lat", latitude);
+	// 	jsonObject.put("alt", altitude);
+	// 	jsonObject.put("rotation", rotation);
 
-		return jsonObject;
-	}
+	// 	return jsonObject;
+	// }
 
 
 

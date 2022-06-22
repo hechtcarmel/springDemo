@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Constants;
 
-import net.minidev.json.JSONObject;
 @RestController
 public class AirplanesManager {
 	
 	private static Logger logger = LogManager.getLogger(AirplanesManager.class);
-	private List<AirplaneFeature> airplanesFeatures = new ArrayList<>();
+	public  List<AirplaneFeature> airplanesFeatures = new ArrayList<>();
 	
 	private void initTestAirplanes() {
-		int AIRPLANES_NUM = 20;
+		int AIRPLANES_NUM = 10000;
 		for (int i = 0; i < AIRPLANES_NUM; i++) {
 
 			int id = i;
@@ -51,7 +50,7 @@ public class AirplanesManager {
 
 			double rotation = Math.atan(latitudeStep/longitudeStep) - Math.PI/2 + (longitudeStep < 0 ? Math.PI : 0);
 			airplane.setRotation(rotation);
-			System.out.println(airplane);
+			//System.out.println(airplane);
 		}
 	}
 	
@@ -61,7 +60,7 @@ public class AirplanesManager {
 
 	@GetMapping(path = "/airplanes/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> welcome() {
-		logger.info("Entered");
+		//logger.info("Entered");
 		
 		updateAirplanesCoordinates();
 		//System.out.println("Returning airplanes" + airplanes.toString());

@@ -1,0 +1,29 @@
+# All available queries on the graphql server
+type Query {
+	bankAccount(id: ID): BankAccount
+	bankAccountPhilip: BankAccount
+	airplanes: [Airplane]
+}
+
+type BankAccount {
+	id: ID!
+    name: String!
+}
+
+type Airplane {
+	id: Int!
+    description: String
+    
+
+}
+
+type Coordinates {
+    latitude: Float!
+    longitude: Float!
+    altitude: Float
+}
+
+#enum EAirplaneType {
+#    AIRBUS
+#}
+
