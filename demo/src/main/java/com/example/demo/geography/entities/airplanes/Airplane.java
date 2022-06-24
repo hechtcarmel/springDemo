@@ -1,5 +1,7 @@
 package com.example.demo.geography.entities.airplanes;
 
+import com.example.demo.Constants.EAirplaneType;
+
 import lombok.Data;
 
 @Data
@@ -10,12 +12,13 @@ public class Airplane {
 	private double longitude;
 	private String description;
     private Coordinates coordinates;
-    
+    private EAirplaneType type;
 
-	public Airplane(int id, String name, double lon, double lat, double alt){
+	public Airplane(int id, String name, double lon, double lat, double alt, EAirplaneType type){
 		this.id = id;
 		this.name = name;
 		this.description = "I am airplane number " + id;
+		this.type = type;
         this.coordinates = new Coordinates(lon, lat, alt, 0);
 	}
 
@@ -28,6 +31,7 @@ public class Airplane {
         this.coordinates.setLongitude(longitude);
 	}
 	
+
 	 
 
 }

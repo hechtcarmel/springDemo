@@ -21,6 +21,8 @@ type Airplane {
     
     #The geographic location of the airplane
     coordinates: Coordinates
+    
+    type: EAirplaneType
 
 }
 
@@ -30,7 +32,9 @@ type Coordinates {
     altitude: Float
 }
 
-#enum EAirplaneType {
-#    AIRBUS
-#}
+enum EAirplaneType {
+    AIRBUS
+	F15
+	F16
+}
 

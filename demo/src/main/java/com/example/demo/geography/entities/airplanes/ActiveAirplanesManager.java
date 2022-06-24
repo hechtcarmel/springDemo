@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.demo.Constants;
+import com.example.demo.Constants.EAirplaneType;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
@@ -22,7 +23,7 @@ public class ActiveAirplanesManager {
 	
 	static {
 		activeAirplanes = new ArrayList<>();
-		int AIRPLANES_NUM = 1000;
+		int AIRPLANES_NUM = 5;
 		for (int i = 0; i < AIRPLANES_NUM; i++) {
 
 			int id = i;
@@ -30,8 +31,8 @@ public class ActiveAirplanesManager {
 			double lon = Constants.LON_MIN + (Constants.LON_MAX - Constants.LON_MIN) * Math.random();
 			double lat = Constants.LAT_MIN + (Constants.LAT_MAX - Constants.LAT_MIN) * Math.random();
 			double alt = 150;
-
-			Airplane airplaneFeat = new Airplane(id, name, lon, lat, alt);
+			EAirplaneType type = id % 3 == 0 ? EAirplaneType.AIRBUS : id % 3 == 1 ? EAirplaneType.F15 : EAirplaneType.F16;
+			Airplane airplaneFeat = new Airplane(id, name, lon, lat, alt, type);
 			activeAirplanes.add(airplaneFeat);
 		}
 		System.out.println("Demo Airplanes: " + activeAirplanes.toString());
@@ -84,7 +85,7 @@ public class ActiveAirplanesManager {
 		//logger.info("Entered");
 		
 		updateAirplanesCoordinates();
-		System.out.println("Returning airplanes" + activeAirplanes.toString());
+		//System.out.println("Returning airplanes" + activeAirplanes.toString());
 		return activeAirplanes;
 		
 	}
@@ -93,7 +94,7 @@ public class ActiveAirplanesManager {
 
 		Airplane airplane = activeAirplanes.stream().filter(a -> a.getId() == id).findFirst().orElse(null);
 
-		System.out.println("Getting airplane" + airplane.toString());
+		//System.out.println("Getting airplane" + airplane.toString());
 		return airplane;
 	}
 	

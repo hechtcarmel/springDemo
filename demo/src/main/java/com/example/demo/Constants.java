@@ -14,4 +14,11 @@ public class Constants {
 	static public double LON_MIN = -180;
 	static public double LON_MAX = 180;
 	
+	public static enum EAirplaneType{
+		AIRBUS,
+		F15,
+		F16
+	}
+	
+	
 }
