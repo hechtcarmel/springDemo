@@ -4,9 +4,13 @@ import java.util.List;
 
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.example.demo.geography.entities.AddAirplaneInput;
 
 //@CrossOrigin(origins = "http://localhost:3000")
 @Controller
@@ -32,6 +36,14 @@ public class AirplanesResolver {
   public Airplane findAirplane(@Argument Integer id){
     System.out.println("QueryMapping: airplane getting id: " + id.toString());
     return ActiveAirplanesManager.getAirplane(id);
+  }
+
+  // @MutationMapping
+  @SchemaMapping(typeName = "Mutation", value = "addAirplane")
+  public Airplane addAirplane(@Argument("input") AddAirplaneInput input){
+    int id = input.getId();
+    System.out.println("MutationMapping: createAirplane with id : " + id);
+    return ActiveAirplanesManager.createAirplane(id);
   }
 	
 }

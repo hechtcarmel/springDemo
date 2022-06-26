@@ -32,9 +32,18 @@ type Coordinates {
     altitude: Float
 }
 
+
 enum EAirplaneType {
     AIRBUS
 	F15
 	F16
 }
 
+# #All mutations
+type Mutation{
+    addAirplane(input: AddAirplaneInput!): Airplane!
+}
+
+input AddAirplaneInput{
+    id: Int!
+}

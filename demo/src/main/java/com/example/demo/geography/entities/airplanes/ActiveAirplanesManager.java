@@ -76,6 +76,13 @@ public class ActiveAirplanesManager {
 			//System.out.println(airplane);
 		}
 	}
+
+	public static Airplane createAirplane(int id){
+		Airplane airplane = new Airplane(id, "Airplane " + id, Constants.LON_MIN + (Constants.LON_MAX - Constants.LON_MIN) * Math.random(),
+				Constants.LAT_MIN + (Constants.LAT_MAX - Constants.LAT_MIN) * Math.random(), 150, EAirplaneType.AIRBUS);
+		activeAirplanes.add(airplane);
+		return airplane;
+	} 
 	
 //	public ActiveAirplanesManager(){
 //		initTestAirplanes();
